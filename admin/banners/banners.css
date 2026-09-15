@@ -1,0 +1,8 @@
+/* Banners Management CSS */
+.banner-preview-img {
+    width: 120px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--admin-border);
+}

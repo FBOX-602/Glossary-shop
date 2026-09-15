@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - FreshMart</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-info">
+                <span><i class="fas fa-truck-fast"></i> Express 1-Hour Delivery</span>
+            </div>
+            <div class="top-bar-info">
+                <span><i class="fas fa-headset"></i> Support: +1 (800) 555-FRESH</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="../../index.html" class="brand-logo">
+                <i class="fas fa-basket-shopping"></i> Fresh<span>Mart</span>
+            </a>
+
+            <div class="header-actions">
+                <a href="../wishlist/index.html" class="action-btn" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span>Wishlist</span>
+                    <span class="nav-badge wishlist-count-badge" style="display:none;">0</span>
+                </a>
+
+                <a href="index.html" class="action-btn" title="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Cart</span>
+                    <span class="nav-badge cart-count-badge" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Shopping Cart</span>
+            </div>
+
+            <!-- Empty Cart View -->
+            <div id="cart-empty-view" style="display:none; text-align:center; padding:4rem 1rem; background:var(--bg-surface); border-radius:var(--radius-xl); box-shadow:var(--shadow-sm);">
+                <i class="fas fa-basket-shopping" style="font-size:4rem; color:var(--text-light); margin-bottom:1rem;"></i>
+                <h2>Your Shopping Cart is Empty</h2>
+                <p style="color:var(--text-muted); margin-top:0.5rem; margin-bottom:1.5rem;">Looks like you haven't added any fresh groceries yet.</p>
+                <a href="../../index.html" class="btn btn-primary btn-lg">Explore Fresh Groceries <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Cart Active Layout -->
+            <div class="cart-page-layout" id="cart-page-layout">
+                <!-- Cart Items Table Card -->
+                <div>
+                    <!-- Free Delivery Progress -->
+                    <div style="background:var(--bg-surface); padding:1rem 1.25rem; border-radius:var(--radius-lg); border:1px solid var(--border-color); margin-bottom:1.5rem;">
+                        <div id="free-delivery-text" style="font-size:0.875rem; font-weight:700; margin-bottom:0.4rem;">
+                            Calculating free delivery...
+                        </div>
+                        <div style="width:100%; height:8px; background:var(--bg-alt); border-radius:4px; overflow:hidden;">
+                            <div id="free-delivery-progress" style="width:0%; height:100%; background:var(--primary); transition:width 0.4s ease;"></div>
+                        </div>
+                    </div>
+
+                    <div class="cart-table-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--border-color); padding-bottom:1rem; margin-bottom:0.5rem;">
+                            <h3 style="font-size:1.2rem;">Cart Items</h3>
+                            <button onclick="clearCart()" style="color:var(--danger); font-size:0.85rem; font-weight:700;">
+                                <i class="fas fa-trash-can"></i> Clear Cart
+                            </button>
+                        </div>
+
+                        <div id="cart-items-list">
+                            <!-- Rendered by cart.js -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary Side Card -->
+                <div class="cart-summary-card">
+                    <h3 style="font-size:1.25rem; margin-bottom:1.25rem; border-bottom:1px solid var(--border-color); padding-bottom:0.75rem;">Order Summary</h3>
+
+                    <div class="summary-row">
+                        <span>Items Subtotal</span>
+                        <span id="summary-subtotal">৳0.00</span>
+                    </div>
+
+                    <div class="summary-row" id="summary-discount-row" style="display:none; color:var(--primary-dark); font-weight:700;">
+                        <span>Promo Discount</span>
+                        <span id="summary-discount-val">-৳0.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Estimated Delivery</span>
+                        <span id="summary-delivery">৳0.00</span>
+                    </div>
+
+                    <!-- Coupon Code Input -->
+                    <div style="margin-top:1.25rem;">
+                        <label style="font-size:0.8rem; font-weight:700; color:var(--text-muted);">Promo / Coupon Code (Try: FRESH20)</label>
+                        <div class="coupon-box">
+                            <input type="text" id="coupon-code-input" class="coupon-input" placeholder="FRESH20" />
+                            <button class="btn btn-outline btn-sm" onclick="applyCouponCode()">Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="summary-row total-row">
+                        <span>Grand Total</span>
+                        <span id="summary-grand-total" class="text-primary">৳0.00</span>
+                    </div>
+
+                    <a href="../checkout/index.html" class="btn btn-primary btn-block btn-lg" style="margin-top:1.5rem;">
+                        Proceed to Checkout <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <div style="text-align:center; margin-top:1rem; font-size:0.8rem; color:var(--text-muted);">
+                        <i class="fas fa-shield-check text-primary"></i> 100% Secure Checkout Guarantee
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreshMart Grocery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase Backend SDK & Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/supabase/config.js"></script>
+    <script src="../../js/supabase/client.js"></script>
+    <script src="../../js/supabase/categories.js"></script>
+    <script src="../../js/supabase/products.js"></script>
+    <script src="../../js/supabase/banners.js"></script>
+    <script src="../../js/supabase/orders.js"></script>
+    <script src="../../js/supabase/customers.js"></script>
+    <script src="../../js/supabase/settings.js"></script>
+    <script src="../../js/supabase/storage.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../js/data.js"></script>
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/products.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="cart.js"></script>
+
+</body>
+</html>

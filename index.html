@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Premium Online Grocery Store</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-info">
+                <span><i class="fas fa-truck-fast"></i> Express 1-Hour Delivery Available</span>
+                <span><i class="fas fa-shield-halved"></i> 100% Organic & Fresh Harvest Guaranteed</span>
+            </div>
+            <div class="top-bar-info">
+                <span><i class="fas fa-headset"></i> Support: +1 (800) 555-FRESH</span>
+                <span><i class="fas fa-envelope"></i> help@freshmart.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="header">
+        <div class="container navbar">
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo">
+                <i class="fas fa-basket-shopping"></i>
+                Fresh<span>Mart</span>
+            </a>
+
+            <!-- Global Live Search -->
+            <div class="header-search">
+                <div class="search-form">
+                    <input type="text" class="search-input" placeholder="Search for rice, fruits, vegetables..." />
+                    <button class="search-btn" title="Search"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-suggestions"></div>
+            </div>
+
+            <!-- Action Navigation Icons -->
+            <div class="header-actions">
+                <a href="pages/wishlist/index.html" class="action-btn" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span>Wishlist</span>
+                    <span class="nav-badge wishlist-count-badge" style="display:none;">0</span>
+                </a>
+
+                <a href="pages/cart/index.html" class="action-btn" title="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Cart</span>
+                    <span class="nav-badge cart-count-badge" style="display:none;">0</span>
+                </a>
+
+                <a href="pages/checkout/index.html" class="btn btn-primary btn-sm">
+                    Checkout <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Horizontal Category Shortcut Bar -->
+        <nav class="category-nav-bar">
+            <div class="container category-nav-inner">
+                <a href="index.html" class="cat-nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="pages/products/product-list/index.html" class="cat-nav-link"><i class="fas fa-th-large"></i> All Products</a>
+                <a href="pages/categories/rice/index.html" class="cat-nav-link">Rice</a>
+                <a href="pages/categories/chocolate/index.html" class="cat-nav-link">Chocolate</a>
+                <a href="pages/categories/frozen/index.html" class="cat-nav-link">Frozen Items</a>
+                <a href="pages/categories/meat/index.html" class="cat-nav-link">Meat</a>
+                <a href="pages/categories/chicken/index.html" class="cat-nav-link">Chicken</a>
+                <a href="pages/categories/fish/index.html" class="cat-nav-link">Fish</a>
+                <a href="pages/categories/vegetables/index.html" class="cat-nav-link">Vegetables</a>
+                <a href="pages/categories/fruits/index.html" class="cat-nav-link">Fruits</a>
+                <a href="pages/categories/snacks/index.html" class="cat-nav-link">Snacks</a>
+                <a href="pages/categories/beverages/index.html" class="cat-nav-link">Beverages</a>
+                <a href="pages/categories/dairy/index.html" class="cat-nav-link">Dairy</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Hero Promotional Banner Carousel (Full Display Width) -->
+        <section class="hero-slider-section">
+            <div class="hero-slider-container">
+                <!-- Slide 1 -->
+                <div class="hero-slide active" style="background-image: linear-gradient(90deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.25) 100%), url('https://images.unsplash.com/photo-1542838132-92c53300491e?w=1600&q=80');">
+                    <div class="container">
+                        <div class="slide-content">
+                            <span class="slide-tag">Fresh Organic Produce</span>
+                            <h1 class="slide-title">Fresh From Farm.<br/>Delivered To Your Door.</h1>
+                            <p class="slide-subtitle">Organic fruits & vegetables, harvested fresh and delivered daily.</p>
+                            <a href="pages/categories/vegetables/index.html" class="btn btn-primary btn-lg">
+                                Shop Fresh Produce <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="hero-slide" style="background-image: linear-gradient(90deg, rgba(6, 78, 59, 0.88) 0%, rgba(6, 78, 59, 0.25) 100%), url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=1600&q=80');">
+                    <div class="container">
+                        <div class="slide-content">
+                            <span class="slide-tag" style="background:rgba(245,158,11,0.3); color:#fef3c7;">Premium Cuts</span>
+                            <h1 class="slide-title">100% Halal Fresh Mutton & Beef</h1>
+                            <p class="slide-subtitle">Hygienically hand-cut, vacuum sealed, and delivered in cold-pack insulation.</p>
+                            <a href="pages/categories/meat/index.html" class="btn btn-primary btn-lg" style="background-color:var(--accent);">
+                                Order Meat & Seafood <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="hero-slide" style="background-image: linear-gradient(90deg, rgba(30, 41, 59, 0.88) 0%, rgba(30, 41, 59, 0.25) 100%), url('https://images.unsplash.com/photo-1586201375761-83865001e31c?w=1600&q=80');">
+                    <div class="container">
+                        <div class="slide-content">
+                            <span class="slide-tag">Pantry Essentials</span>
+                            <h1 class="slide-title">Aged Basmati Rice & Pure Oils</h1>
+                            <p class="slide-subtitle">Stock up your pantry with authentic ingredients at unbeatable wholesale prices.</p>
+                            <a href="pages/categories/rice/index.html" class="btn btn-primary btn-lg">
+                                Browse Pantry Staples <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Nav Arrows & Dots -->
+                <button class="slider-arrow prev" title="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-arrow next" title="Next Slide"><i class="fas fa-chevron-right"></i></button>
+                <div class="slider-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Product Categories Grid Section -->
+        <section class="section-padding bg-surface" style="border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+            <div class="container">
+                <div class="section-header justify-between">
+                    <div>
+                        <h2 class="section-title">Shop by Category</h2>
+                        <p class="section-subtitle">Select a category to browse full product listings</p>
+                    </div>
+                    <a href="pages/products/product-list/index.html" class="btn btn-outline btn-sm">View All Categories <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="category-grid" id="homepage-category-grid">
+                    <!-- Dynamic categories rendered via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Category-Based Product Sections -->
+        
+        <!-- Deals of the Week -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header justify-between">
+                    <div>
+                        <h2 class="section-title"><i class="fas fa-fire text-danger"></i> Deals of the Week</h2>
+                        <p class="section-subtitle">Handpicked fresh discounts with maximum savings</p>
+                    </div>
+                    <a href="pages/products/product-list/index.html?filter=featured" class="btn btn-outline btn-sm">View All Deals <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="products-grid" id="featured-products-grid"></div>
+            </div>
+        </section>
+
+        <!-- Category Section: Rice & Staples -->
+        <section class="section-padding bg-surface" style="border-top:1px solid var(--border-color);">
+            <div class="container">
+                <div class="section-header justify-between">
+                    <div>
+                        <h2 class="section-title"><i class="fas fa-bowl-rice text-primary"></i> Premium Rice</h2>
+                        <p class="section-subtitle">Aged Basmati, Jasmine, and staple rice varieties</p>
+                    </div>
+                    <a href="pages/categories/rice/index.html" class="btn btn-outline btn-sm">View All Rice <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="products-grid" id="rice-products-grid"></div>
+            </div>
+        </section>
+
+        <!-- Category Section: Fresh Meat & Poultry -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header justify-between">
+                    <div>
+                        <h2 class="section-title"><i class="fas fa-drumstick-bite text-primary"></i> Meat & Poultry</h2>
+                        <p class="section-subtitle">100% Halal fresh mutton, Angus beef, and organic chicken</p>
+                    </div>
+                    <a href="pages/categories/meat/index.html" class="btn btn-outline btn-sm">View All Meat <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="products-grid" id="meat-products-grid"></div>
+            </div>
+        </section>
+
+        <!-- Category Section: Fruits & Vegetables -->
+        <section class="section-padding bg-surface" style="border-top:1px solid var(--border-color);">
+            <div class="container">
+                <div class="section-header justify-between">
+                    <div>
+                        <h2 class="section-title"><i class="fas fa-apple-whole text-primary"></i> Fresh Fruits & Vegetables</h2>
+                        <p class="section-subtitle">Farm-fresh organic fruits, vegetables, greens & root vegetables</p>
+                    </div>
+                    <a href="pages/categories/vegetables/index.html" class="btn btn-outline btn-sm">View All Produce <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="products-grid" id="produce-products-grid"></div>
+            </div>
+        </section>
+
+        <!-- Trust / Benefits Section -->
+        <section class="section-padding bg-alt">
+            <div class="container">
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem; text-align:center;">
+                    <div style="background:var(--bg-surface); padding:1.75rem; border-radius:var(--radius-lg); border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+                        <i class="fas fa-bolt" style="font-size:2rem; color:var(--accent); margin-bottom:0.75rem;"></i>
+                        <h4 style="margin-bottom:0.1000rem; font-size:1rem;">Express 1-Hour Delivery</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">Quick delivery straight to your doorstep in insulated temperature-controlled bags.</p>
+                    </div>
+
+                    <div style="background:var(--bg-surface); padding:1.75rem; border-radius:var(--radius-lg); border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+                        <i class="fas fa-leaf" style="font-size:2rem; color:var(--primary); margin-bottom:0.75rem;"></i>
+                        <h4 style="margin-bottom:0.1000rem; font-size:1rem;">100% Organic Freshness</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">Direct farm sourcing guarantees peak quality, zero preservatives, and fresh taste.</p>
+                    </div>
+
+                    <div style="background:var(--bg-surface); padding:1.75rem; border-radius:var(--radius-lg); border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+                        <i class="fas fa-lock" style="font-size:2rem; color:var(--info); margin-bottom:0.75rem;"></i>
+                        <h4 style="margin-bottom:0.1000rem; font-size:1rem;">Secure Checkout</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">Multiple payment options: Cash on Delivery, Credit Cards, Mobile Banking.</p>
+                    </div>
+
+                    <div style="background:var(--bg-surface); padding:1.75rem; border-radius:var(--radius-lg); border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+                        <i class="fas fa-rotate-left" style="font-size:2rem; color:var(--danger); margin-bottom:0.75rem;"></i>
+                        <h4 style="margin-bottom:0.1000rem; font-size:1rem;">Easy Returns Guarantee</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">Not satisfied with quality? Instant replacement or 100% money back refund.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Fixed Bottom Navigation Bar -->
+    <div class="mobile-bottom-nav">
+        <div class="mobile-bottom-nav-inner">
+            <a href="index.html" class="mobile-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="pages/products/product-list/index.html" class="mobile-nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+            </a>
+            <a href="pages/cart/index.html" class="mobile-nav-item">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Cart</span>
+            </a>
+            <a href="pages/wishlist/index.html" class="mobile-nav-item">
+                <i class="far fa-heart"></i>
+                <span>Wishlist</span>
+            </a>
+            <a href="pages/checkout/index.html" class="mobile-nav-item">
+                <i class="fas fa-credit-card"></i>
+                <span>Checkout</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Polished Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Fresh Mart Brand -->
+                <div class="footer-col">
+                    <a href="index.html" class="brand-logo" style="color:white; margin-bottom:0.85rem;">
+                        <i class="fas fa-basket-shopping" style="color:var(--primary);"></i> Fresh<span>Mart</span>
+                    </a>
+                    <p style="margin-bottom:1.15rem; font-size:0.875rem; line-height:1.6;">Your trusted neighborhood online grocery store delivering fresh fruits, organic vegetables, halal meat, and household essentials.</p>
+                    <div style="display:flex; gap:0.85rem; font-size:1.15rem;">
+                        <a href="#" style="color:#cbd5e1;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color:#cbd5e1;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color:#cbd5e1;"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" style="color:#cbd5e1;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Shop Links -->
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/products/product-list/index.html">All Products</a></li>
+                        <li><a href="pages/products/product-list/index.html?filter=featured">Today's Deals</a></li>
+                        <li><a href="pages/cart/index.html">Shopping Cart</a></li>
+                        <li><a href="pages/wishlist/index.html">My Wishlist</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Help & Support -->
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Returns & Refund</a></li>
+                        <li><a href="#">Frequently Asked Questions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Follow & Contact Info -->
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info-list">
+                        <li><i class="fas fa-location-dot"></i> 124 Fresh Harvest Avenue, Metro Green Zone</li>
+                        <li><i class="fas fa-phone"></i> Hotline: +1 (800) 555-FRESH</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp: +1 (800) 555-9999</li>
+                        <li><i class="fas fa-clock"></i> Hours: 7:00 AM - 11:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreshMart Grocery. All rights reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-amex" title="American Express"></i>
+                    <i class="fas fa-mobile-screen-button" title="Mobile Banking"></i>
+                    <i class="fas fa-money-bill-1" title="Cash on Delivery"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase Backend SDK & Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase/config.js"></script>
+    <script src="js/supabase/client.js"></script>
+    <script src="js/supabase/categories.js"></script>
+    <script src="js/supabase/products.js"></script>
+    <script src="js/supabase/banners.js"></script>
+    <script src="js/supabase/orders.js"></script>
+    <script src="js/supabase/customers.js"></script>
+    <script src="js/supabase/settings.js"></script>
+    <script src="js/supabase/storage.js"></script>
+
+    <!-- Core Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Homepage Specific Rendering Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderHomepageCategories();
+            renderHomepageProducts();
+        });
+
+        window.addEventListener('dbUpdated', () => {
+            renderHomepageCategories();
+            renderHomepageProducts();
+        });
+
+        function renderHomepageCategories() {
+            const categories = getAllCategories();
+            const container = document.getElementById('homepage-category-grid');
+            if (!container) return;
+
+            container.innerHTML = categories.map(cat => `
+                <div class="category-card" onclick="window.location.href='pages/categories/${cat.id}/index.html'">
+                    <div class="category-icon-wrapper">
+                        <img src="${cat.icon}" alt="${cat.name}" loading="lazy" />
+                    </div>
+                    <span class="category-title">${cat.name}</span>
+                    <span class="category-count">${cat.count || ''}</span>
+                </div>
+            `).join('');
+        }
+
+        function renderHomepageProducts() {
+            // Featured / Deals
+            const featured = getFeaturedProducts().slice(0, 4);
+            const featContainer = document.getElementById('featured-products-grid');
+            if (featContainer) featContainer.innerHTML = featured.map(p => renderProductCard(p, '')).join('');
+
+            // Rice
+            const riceItems = getProductsByCategory('rice').slice(0, 4);
+            const riceContainer = document.getElementById('rice-products-grid');
+            if (riceContainer) riceContainer.innerHTML = riceItems.map(p => renderProductCard(p, '')).join('');
+
+            // Meat
+            const meatItems = [...getProductsByCategory('meat'), ...getProductsByCategory('chicken')].slice(0, 4);
+            const meatContainer = document.getElementById('meat-products-grid');
+            if (meatContainer) meatContainer.innerHTML = meatItems.map(p => renderProductCard(p, '')).join('');
+
+            // Produce
+            const produceItems = [...getProductsByCategory('vegetables'), ...getProductsByCategory('fruits')].slice(0, 4);
+            const produceContainer = document.getElementById('produce-products-grid');
+            if (produceContainer) produceContainer.innerHTML = produceItems.map(p => renderProductCard(p, '')).join('');
+        }
+    </script>
+</body>
+</html>

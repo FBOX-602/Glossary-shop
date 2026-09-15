@@ -1,0 +1,105 @@
+/* Order Confirmation Page Styles */
+.success-banner {
+    background: linear-gradient(135deg, #10b981 0%, #064e3b 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2.5rem;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    margin: 0 auto 1.25rem auto;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.order-receipt-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+}
+
+.timeline-tracker {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 2rem 0;
+}
+
+.timeline-tracker::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    right: 40px;
+    height: 4px;
+    background: var(--border-color);
+    z-index: 1;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 2;
+    background: var(--bg-surface);
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.step-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bg-alt);
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.timeline-step.completed .step-circle {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.timeline-step.active .step-circle {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+@media print {
+    .header, .footer, .top-bar, .breadcrumb, .no-print {
+        display: none !important;
+    }
+    .order-receipt-card {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+}

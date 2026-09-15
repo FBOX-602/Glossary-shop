@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Settings - FreshMart Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin-global.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+        <div>
+            <div class="sidebar-header">
+                <a href="../dashboard/index.html" class="admin-logo">
+                    <i class="fas fa-basket-shopping"></i> Fresh<span>Mart</span>
+                    <span class="admin-badge">Admin</span>
+                </a>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-label">Main Menu</div>
+                <a href="../dashboard/index.html" class="menu-item">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </a>
+                <a href="../banners/index.html" class="menu-item">
+                    <i class="fas fa-images"></i> Banners
+                </a>
+                <a href="../categories/index.html" class="menu-item">
+                    <i class="fas fa-list-check"></i> Categories
+                </a>
+                <a href="../products/index.html" class="menu-item">
+                    <i class="fas fa-box-open"></i> Products
+                </a>
+                <a href="../orders/index.html" class="menu-item">
+                    <i class="fas fa-cart-shopping"></i> Orders
+                </a>
+                <a href="../customers/index.html" class="menu-item">
+                    <i class="fas fa-users"></i> Customers
+                </a>
+
+                <div class="menu-label">System & Content</div>
+                <a href="../contact/index.html" class="menu-item">
+                    <i class="fas fa-address-book"></i> Contact Info
+                </a>
+                <a href="../settings/index.html" class="menu-item active">
+                    <i class="fas fa-gear"></i> Website Settings
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-footer">
+            <a href="../../index.html" target="_blank" class="btn-admin btn-admin-outline" style="width:100%; margin-bottom:0.5rem; justify-content:center;">
+                <i class="fas fa-external-link"></i> View Website
+            </a>
+            <button onclick="adminLogout()" class="btn-admin btn-admin-danger" style="width:100%; justify-content:center;">
+                <i class="fas fa-right-from-bracket"></i> Sign Out
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="admin-main">
+        <header class="admin-topbar">
+            <div class="topbar-title">Website System Settings</div>
+        </header>
+
+        <main class="admin-body">
+            <div style="max-width: 900px;">
+
+                <!-- Supabase Backend Connection Card -->
+                <div class="settings-card">
+                    <h3 style="font-size:1.1rem; margin-bottom:0.5rem;"><i class="fas fa-database" style="color:#3ecf8e;"></i> Supabase Central Backend Connection</h3>
+                    <p style="font-size:0.85rem; color:var(--admin-muted); margin-bottom:1rem;">
+                        Connect and verify your Supabase project (Project ID: <code>hlrmvpbpqcjcmgithaff</code>) to enable cloud synchronization.
+                    </p>
+
+                    <div id="supabase-status-badge" style="margin-bottom:1.25rem;"></div>
+
+                    <form onsubmit="handleSaveSupabaseConfig(event)">
+                        <div class="settings-grid">
+                            <div class="admin-form-group">
+                                <label class="admin-form-label">Supabase URL</label>
+                                <input type="url" id="st-supabaseUrl" class="admin-form-input" readonly value="https://hlrmvpbpqcjcmgithaff.supabase.co" />
+                            </div>
+                            <div class="admin-form-group">
+                                <label class="admin-form-label">Supabase Anon / Publishable API Key *</label>
+                                <input type="password" id="st-supabaseAnonKey" class="admin-form-input" required placeholder="Paste your Supabase anon/public API key here" />
+                            </div>
+                        </div>
+
+                        <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center;">
+                            <a href="../../supabase-schema.sql" target="_blank" style="font-size:0.85rem; color:var(--admin-primary); text-decoration:underline;">
+                                <i class="fas fa-file-code"></i> View & Copy Database Schema SQL (supabase-schema.sql)
+                            </a>
+                            <button type="submit" class="btn-admin btn-admin-primary">
+                                <i class="fas fa-plug"></i> Save API Key & Test Connection
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- General Store Settings -->
+                <div class="settings-card">
+                    <h3 style="font-size:1.1rem; margin-bottom:0.5rem;"><i class="fas fa-sliders" style="color:var(--admin-primary);"></i> Store & Currency Settings</h3>
+                    <p style="font-size:0.85rem; color:var(--admin-muted); margin-bottom:1.5rem;">
+                        Configure store branding, default currency, and shipping calculation thresholds.
+                    </p>
+
+                    <form onsubmit="handleSaveGeneralSettings(event)">
+                        <div class="settings-grid">
+                            <div class="admin-form-group">
+                                <label class="admin-form-label">Store Brand Name</label>
+                                <input type="text" id="st-siteName" class="admin-form-input" required />
+                            </div>
+                            <div class="admin-form-group">
+                                <label class="admin-form-label">Currency Symbol</label>
+                                <input type="text" id="st-currency" class="admin-form-input" required placeholder="৳" />
+                            </div>
+                        </div>
+
+                        <div class="settings-grid">
+                            <div class="admin-form-group">
+                                <label class="admin-form-label">Free Delivery Threshold (৳)</label>
+                                <input type="number" id="st-freeDelivery" class="admin-form-input" required min="0" />
+                                <small style="color:var(--admin-muted); font-size:0.75rem;">Orders above this amount qualify for free shipping.</small>
+                            </div>
+                            <div class="admin-form-group">
+                                <label class="admin-form-label">Standard Delivery Fee (৳)</label>
+                                <input type="number" id="st-deliveryFee" class="admin-form-input" required min="0" />
+                                <small style="color:var(--admin-muted); font-size:0.75rem;">Charged when order total is below threshold.</small>
+                            </div>
+                        </div>
+
+                        <div style="margin-top:1.5rem; display:flex; justify-content:flex-end;">
+                            <button type="submit" class="btn-admin btn-admin-primary">
+                                <i class="fas fa-floppy-disk"></i> Save Store Settings
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Admin Security Settings -->
+                <div class="settings-card">
+                    <h3 style="font-size:1.1rem; margin-bottom:0.5rem;"><i class="fas fa-shield-halved" style="color:#ef4444;"></i> Admin Password Management</h3>
+                    <p style="font-size:0.85rem; color:var(--admin-muted); margin-bottom:1.5rem;">
+                        Update the administrative security credential for your dashboard login.
+                    </p>
+
+                    <form id="password-form" onsubmit="handleChangePassword(event)">
+                        <div class="admin-form-group">
+                            <label class="admin-form-label">Current Admin Password</label>
+                            <input type="password" id="st-currentPass" class="admin-form-input" required placeholder="Enter current password" />
+                        </div>
+
+                        <div class="settings-grid">
+                            <div class="admin-form-group">
+                                <label class="admin-form-label">New Password</label>
+                                <input type="password" id="st-newPass" class="admin-form-input" required placeholder="At least 4 characters" />
+                            </div>
+                            <div class="admin-form-group">
+                                <label class="admin-form-label">Confirm New Password</label>
+                                <input type="password" id="st-confirmPass" class="admin-form-input" required placeholder="Re-type new password" />
+                            </div>
+                        </div>
+
+                        <div style="margin-top:1.5rem; display:flex; justify-content:flex-end;">
+                            <button type="submit" class="btn-admin btn-admin-danger">
+                                <i class="fas fa-key"></i> Update Admin Password
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Supabase SDK & Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/supabase/config.js"></script>
+    <script src="../../js/supabase/client.js"></script>
+    <script src="../../js/supabase/categories.js"></script>
+    <script src="../../js/supabase/products.js"></script>
+    <script src="../../js/supabase/banners.js"></script>
+    <script src="../../js/supabase/orders.js"></script>
+    <script src="../../js/supabase/customers.js"></script>
+    <script src="../../js/supabase/settings.js"></script>
+    <script src="../../js/supabase/storage.js"></script>
+
+    <!-- Core Admin Scripts -->
+    <script src="../../js/data.js"></script>
+    <script src="../../js/storage.js"></script>
+    <script src="../js/admin-auth.js"></script>
+    <script src="settings.js"></script>
+
+</body>
+</html>

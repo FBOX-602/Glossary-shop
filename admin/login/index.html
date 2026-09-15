@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - FreshMart Control Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin-global.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="login-body">
+
+    <div class="login-card">
+        <div class="login-logo">
+            <i class="fas fa-basket-shopping"></i> Fresh<span>Mart</span>
+            <span class="admin-badge">Admin</span>
+        </div>
+        <p style="text-align:center; color:var(--admin-muted); font-size:0.875rem; margin-bottom:1.5rem;">
+            Enter credentials to access central management panel
+        </p>
+
+        <div id="login-error" style="display:none; background:#fef2f2; color:#b91c1c; padding:0.65rem 0.85rem; border-radius:6px; font-size:0.8rem; margin-bottom:1rem; border:1px solid #fee2e2;"></div>
+
+        <form onsubmit="handleAdminLogin(event)">
+            <div class="admin-form-group">
+                <label class="admin-form-label" for="username">Username</label>
+                <input type="text" id="username" class="admin-form-input" required placeholder="admin" value="admin" />
+            </div>
+
+            <div class="admin-form-group">
+                <label class="admin-form-label" for="password">Password</label>
+                <input type="password" id="password" class="admin-form-input" required placeholder="admin123" value="admin123" />
+            </div>
+
+            <button type="submit" class="btn-admin btn-admin-primary" style="width:100%; padding:0.75rem; font-size:0.95rem; margin-top:0.5rem;">
+                Sign In to Dashboard <i class="fas fa-arrow-right"></i>
+            </button>
+        </form>
+
+        <div style="text-align:center; margin-top:1.5rem; font-size:0.8rem; color:var(--admin-muted);">
+            Default Login: <strong>admin</strong> | Password: <strong>admin123</strong>
+        </div>
+    </div>
+
+    <script src="../../js/data.js"></script>
+    <script src="../../js/storage.js"></script>
+    <script src="../js/admin-auth.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

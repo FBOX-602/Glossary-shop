@@ -1,0 +1,235 @@
+/* ==========================================================================
+   FreshMart Grocery eCommerce - Global Styles & CSS Variables (Polished)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Brand Palette */
+    --primary: #10b981;          /* Fresh Emerald Green */
+    --primary-hover: #059669;    /* Deep Emerald */
+    --primary-light: #ecfdf5;    /* Soft Mint Background Tint */
+    --primary-dark: #047857;     /* Dark Emerald Text */
+
+    --secondary: #0f172a;        /* Slate Black/Navy */
+    --secondary-hover: #1e293b;
+    --accent: #f59e0b;           /* Amber Gold */
+    --accent-hover: #d97706;
+    --accent-light: #fffbeb;
+
+    --danger: #ef4444;           /* Discount Red */
+    --danger-light: #fef2f2;
+    --success: #10b981;
+    --info: #3b82f6;
+
+    /* Surface & Background Neutrals */
+    --bg-body: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-alt: #f1f5f9;
+
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --text-light: #94a3b8;
+    --text-inverse: #ffffff;
+
+    --border-color: #e2e8f0;     /* Extremely subtle gray border */
+    --border-light: #f8fafc;
+
+    /* Typography */
+    --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Layout & Radius */
+    --container-max: 1280px;
+    --header-height: 76px;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+    --radius-full: 9999px;
+
+    /* Soft Elevation Shadows */
+    --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px 0 rgba(15, 23, 42, 0.02);
+    --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+    --shadow-lg: 0 12px 32px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+    --shadow-hover: 0 12px 24px -4px rgba(16, 185, 129, 0.15);
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+/* Utilities */
+.text-primary { color: var(--primary); }
+.text-accent { color: var(--accent); }
+.text-muted { color: var(--text-muted); }
+.text-danger { color: var(--danger); }
+.text-center { text-align: center; }
+
+.bg-surface { background-color: var(--bg-surface); }
+.bg-alt { background-color: var(--bg-alt); }
+
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.items-center { display: flex; align-items: center; }
+.justify-between { display: flex; align-items: center; justify-content: space-between; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+
+/* Section Spacing System */
+.section-padding {
+    padding: 4.5rem 0;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.025em;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    margin-top: 0.35rem;
+    font-weight: 400;
+}
+
+/* Subtle Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.badge-discount {
+    background-color: var(--danger);
+    color: white;
+}
+
+.badge-stock {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.badge-out-of-stock {
+    background-color: #f1f5f9;
+    color: #94a3b8;
+}
+
+.badge-featured {
+    background-color: var(--accent-light);
+    color: var(--accent-hover);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-alt);
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FreshMart Admin Panel</title>
+    <script>
+        const session = localStorage.getItem('freshmart_admin_session_v1');
+        if (session) {
+            window.location.href = './dashboard/index.html';
+        } else {
+            window.location.href = './login/index.html';
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting to FreshMart Admin Panel...</p>
+</body>
+</html>

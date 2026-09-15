@@ -1,0 +1,13 @@
+/* Customers Management CSS */
+.cust-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--admin-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}

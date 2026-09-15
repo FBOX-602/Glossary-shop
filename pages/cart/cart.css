@@ -1,0 +1,114 @@
+/* Shopping Cart Page Styles */
+.cart-page-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 2rem;
+}
+
+.cart-table-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.cart-item-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 140px 100px 40px;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.cart-item-row:last-child {
+    border-bottom: none;
+}
+
+.cart-item-thumb {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-md);
+    object-fit: contain;
+    background: var(--bg-alt);
+    padding: 0.35rem;
+}
+
+.cart-item-info h4 {
+    font-size: 1rem;
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+}
+
+.cart-item-variant {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    background: var(--primary-light);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-full);
+    display: inline-block;
+}
+
+.cart-item-subtotal {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+.cart-summary-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.85rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.summary-row.total-row {
+    border-top: 2px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.coupon-box {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1.25rem 0;
+}
+
+.coupon-input {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0.6rem 0.85rem;
+    background: var(--bg-alt);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+    .cart-page-layout {
+        grid-template-columns: 1fr;
+    }
+    .cart-item-row {
+        grid-template-columns: 70px 1fr 100px 30px;
+    }
+    .cart-item-subtotal {
+        display: none;
+    }
+}

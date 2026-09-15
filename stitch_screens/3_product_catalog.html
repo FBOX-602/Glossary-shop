@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f9f9fb;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary": "#ffffff", "on-surface-variant": "#414844", "surface-variant": "#e2e2e5", "primary-fixed-dim": "#a5d0b9", "inverse-on-surface": "#f0f0f3", "on-background": "#1a1c1e", "inverse-surface": "#2f3133", "surface-container-low": "#f3f3f6", "surface-bright": "#f9f9fb", "primary-container": "#1b4332", "primary": "#012d1d", "surface-container": "#edeef0", "surface": "#f9f9fb", "secondary-container": "#aeeecb", "tertiary-fixed": "#ffdad2", "surface-tint": "#3f6653", "on-primary-fixed-variant": "#274e3d", "tertiary-container": "#741b04", "secondary": "#2c694e", "on-secondary-fixed": "#002114", "on-tertiary-container": "#ff8364", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "secondary-fixed": "#b1f0ce", "background": "#f9f9fb", "on-surface": "#1a1c1e", "outline-variant": "#c1c8c2", "tertiary": "#500c00", "primary-fixed": "#c1ecd4", "surface-container-high": "#e8e8ea", "surface-dim": "#d9dadc", "on-tertiary-fixed": "#3c0700", "outline": "#717973", "on-primary-fixed": "#002114", "on-error": "#ffffff", "error": "#ba1a1a", "error-container": "#ffdad6", "inverse-primary": "#a5d0b9", "on-secondary-container": "#316e52", "surface-container-highest": "#e2e2e5", "on-secondary-fixed-variant": "#0e5138", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#83260e", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb4a2", "on-primary-container": "#86af99", "secondary-fixed-dim": "#95d4b3" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-mobile": "0.75rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin-mobile": "1rem" }, fontFamily: { "headline-lg-mobile": ["Epilogue"], "headline-lg": ["Epilogue"], "label-sm": ["Plus Jakarta Sans"], "display-mobile": ["Epilogue"], "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-md": ["Epilogue"], "body-lg": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Epilogue"], "display": ["Epilogue"], "body-md": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "700" }], "display-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.03em", fontWeight: "600" }], "headline-md": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "26px", letterSpacing: "0em", fontWeight: "400" }], "title-md": ["18px", { lineHeight: "26px", letterSpacing: "-0.005em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "400" }], "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "display": ["56px", { lineHeight: "64px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 px-margin-mobile flex flex-col justify-between py-space-xs"><div class="flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><img alt="Verdant Grocer Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XYNLevKYNseWhd0WSoTsL_uTh6X2LUmv7wyJP5PDHufw4uX3go7Dzr7cRh6v-4foVn0OsgnePRxZeO3WNcBofbufCxWjtUZKyVqdbb2OAwPcDRg9Y2T6sYZycdDRll0iZZZ467JAjjt7POotoq6glwhea79HSfCKsbQyyny2TIjqFfnPCFbMhD_WVUEnQMZTr1ssBEnjSu0Wk3ua2fT3f3SGV1Np2roc5E27oEfZNT33NzYMgYW0sP7wg"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate">Verdant Grocer</span></div><div class="flex items-center gap-space-xs"><a class="relative w-11 h-11 flex items-center justify-center text-primary active:scale-95 transition-transform" data-path="cart" href="#"><span class="material-symbols-outlined text-[24px]">shopping_bag</span><span class="absolute top-1 right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-tertiary-container text-on-tertiary font-label-sm text-label-sm rounded-full">3</span></a><a class="w-11 h-11 flex items-center justify-center" data-path="profile-settings" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBUBT3_fUnr2Vi4GJ381wHEfcXRdBSqpjIsu259PDU7xQheeFV8M5Ylxo8UEjBsfCGB46Q76z3GdPhaK4lCdUxlO2CJ_zZs8LCY05xkUBR1R-9UgrLmGZo7NKiTl6FzQ8kPJMvuerzSp_wFbStZYfP-Mnwh08bVlTpUvhVNyi2GU04mzP1os1HNB-rBzGICqcXiRwp1vCBdLaJtSO0Ung8psQmbHeSOi98fA4Uhipu6r_d89ygGK8h"/></a></div></div><div class="flex items-center justify-between gap-space-xs"><button class="flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-low rounded-full active:scale-98 transition-transform max-w-[65%]"><span class="material-symbols-outlined text-secondary text-[16px]">location_on</span><span class="font-label-sm text-label-sm text-on-surface truncate">Maple Ave, Apt 4B • 15-25 min</span><span class="material-symbols-outlined text-on-surface-variant text-[14px]">expand_more</span></button><div class="flex items-center gap-1.5 min-w-0 flex-1 justify-end"><div class="relative flex-1 max-w-[140px]"><input class="w-full h-8 pl-7 pr-2 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm rounded-full placeholder:text-outline focus:outline-none" placeholder="Search organic..." type="text"/><span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-outline text-[16px]">search</span></div><button class="w-8 h-8 flex items-center justify-center bg-surface-container-low text-primary rounded-full active:scale-95 transition-transform"><span class="material-symbols-outlined text-[18px]">tune</span></button></div></div></div></header><main class="flex flex-col relative w-full pt-28 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<section class="px-margin-mobile pt-space-xs pb-space-sm flex flex-col gap-space-xs">
+<div class="flex items-baseline justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Direct Harvest</span>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Produce &amp; Staples</h1>
+</div>
+<div class="flex items-center gap-1.5 px-space-xs py-1 rounded-full bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[14px]">eco</span>
+<span class="font-label-sm text-label-sm">148 Available</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sustainably cultivated heirloom crops, premium pantry grains &amp; fresh essentials directly from certified growers.</p>
+</section>
+<section class="flex flex-col gap-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs px-margin-mobile overflow-x-auto no-scrollbar py-1">
+<div class="relative flex-shrink-0">
+<button class="h-8 px-3 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all shadow-sm" id="sortBtn" onclick="toggleSortMenu()">
+<span class="material-symbols-outlined text-[16px] text-secondary">swap_vert</span>
+<span id="currentSortLabel">Featured</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">expand_more</span>
+</button>
+<div class="hidden absolute top-10 left-0 w-48 bg-surface-container-lowest rounded-xl shadow-xl z-30 p-1 flex flex-col gap-0.5" id="sortMenu">
+<button class="w-full text-left px-3 py-2 rounded-lg font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors" onclick="setSort('Featured')">Featured</button>
+<button class="w-full text-left px-3 py-2 rounded-lg font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors" onclick="setSort('Price: Low to High')">Price: Low to High</button>
+<button class="w-full text-left px-3 py-2 rounded-lg font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors" onclick="setSort('Price: High to Low')">Price: High to Low</button>
+<button class="w-full text-left px-3 py-2 rounded-lg font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors" onclick="setSort('Top Rated')">Top Rated</button>
+<button class="w-full text-left px-3 py-2 rounded-lg font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors" onclick="setSort('Biggest Discount')">Biggest Discount</button>
+</div>
+</div>
+<button class="filter-pill flex-shrink-0 h-8 px-3 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all" onclick="togglePill(this)">
+<span>Under $15</span>
+</button>
+<button class="filter-pill active-pill flex-shrink-0 h-8 px-3 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all" onclick="togglePill(this)">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span>Organic Certified</span>
+</button>
+<button class="filter-pill flex-shrink-0 h-8 px-3 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all" onclick="togglePill(this)">
+<span>In Stock Only</span>
+</button>
+<button class="filter-pill flex-shrink-0 h-8 px-3 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all" onclick="togglePill(this)">
+<span>Discount &gt;20%</span>
+</button>
+<button class="filter-pill flex-shrink-0 h-8 px-3 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all" onclick="togglePill(this)">
+<span>EarthBorn</span>
+</button>
+<button class="filter-pill flex-shrink-0 h-8 px-3 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all" onclick="togglePill(this)">
+<span>RoyalGrains</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs px-margin-mobile overflow-x-auto no-scrollbar pt-1" id="activeFiltersRow">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider flex-shrink-0">Active:</span>
+<span class="inline-flex items-center gap-1 pl-2.5 pr-1.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm shadow-sm flex-shrink-0" id="tag-under15">
+        Under $15
+        <button class="w-4 h-4 rounded-full flex items-center justify-center hover:bg-surface-variant text-on-surface-variant transition-colors" onclick="removeFilter('tag-under15')">
+<span class="material-symbols-outlined text-[12px]">close</span>
+</button>
+</span>
+<span class="inline-flex items-center gap-1 pl-2.5 pr-1.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm flex-shrink-0" id="tag-organic">
+        Organic Only
+        <button class="w-4 h-4 rounded-full flex items-center justify-center hover:bg-secondary-fixed text-on-secondary-fixed transition-colors" onclick="removeFilter('tag-organic')">
+<span class="material-symbols-outlined text-[12px]">close</span>
+</button>
+</span>
+<button class="text-secondary font-label-md text-label-md hover:underline active:opacity-70 flex-shrink-0 ml-1" onclick="clearAllFilters()">
+        Clear All
+      </button>
+</div>
+</section>
+<section class="px-margin-mobile grid grid-cols-2 gap-gutter-mobile">
+<div class="product-card flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden p-2.5 justify-between relative transition-transform active:scale-[0.99]">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container-low mb-2">
+<img class="w-full h-full object-cover" data-alt="Vibrant organic crisp Honeycrisp apples with dewy droplets resting in a rustic woven farm basket in warm morning sunlight, deep forest greens and golden hues, commercial farm-to-table photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-6LftManlWnv9vfAugIRdeujXerBfkXJX5s9cGGJR86o4RTT3bFWoseWidV89m1xC8xK7ljWXLi7M3qJlACByjn__fF4YtONk5O9EypsvFv6QsZ6RtFPSxljUWsc1YTATOpRk9eVQZA4PUlAIht4ib9ilWLgGHupu6_mQHGFOCo0Lw_k3DeLGJ7csMYYDyTlbUbz6RODOYj89i9Wu42832ojy7pjIpR9CLwHHNTiepDdPNummZYOq"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm tracking-tight shadow-sm">-22%</span>
+<button class="wishlist-btn absolute top-1.5 right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant shadow-sm active:scale-75 transition-all" onclick="toggleWishlist(this, 'Honeycrisp Apples')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">FarmChoice</span>
+<div class="flex items-center gap-0.5 text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm">4.9</span>
+<span class="font-label-sm text-label-sm text-outline">(312)</span>
+</div>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface line-clamp-2 leading-tight mb-1">Organic Sweet Crisp Honeycrisp Apples</h2>
+<div class="flex items-baseline gap-1.5 mb-2.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$3.89<span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/lb</span></span>
+<span class="font-body-sm text-body-sm text-outline line-through">$4.99</span>
+</div>
+</div>
+<button class="w-full h-9 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" onclick="addToCart(this, 'Honeycrisp Apples')">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+<div class="product-card flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden p-2.5 justify-between relative transition-transform active:scale-[0.99]">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container-low mb-2">
+<img class="w-full h-full object-cover" data-alt="Traditional burlap sack filled with pristine long-grain aged basmati rice grains overflowing onto dark slate surface, warm earthen studio lighting with sharp depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtfmM8IZE_tmpSKzWC0T13DzN5_GolZukYXRdZ9tgMO_QzhKOYEx77TegCXJP0bC5ij27vSdQGjcNeLCY77WIjug9VOQ6By4ab9j5ZcDnFjFgkCRhWS5bxv8afBPJUrPCzd0TOW-d1h6V15Cn9KVL9z3g_h53D2HCPBPfUW-lX9x3WsN2HEm-8VmgtSCxrWokSwFOYkivCuuhcsK14BAgRqv4kZH-Q6i1LE-emDhN79xmWDbLrKejz"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm tracking-tight shadow-sm">-18%</span>
+<button class="wishlist-btn absolute top-1.5 right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant shadow-sm active:scale-75 transition-all" onclick="toggleWishlist(this, 'Basmati Rice 5kg')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">RoyalHarvest</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed">In Stock</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface line-clamp-2 leading-tight mb-1">Aged Long-Grain Basmati Rice 5kg</h2>
+<div class="flex items-baseline gap-1.5 mb-2.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$16.49</span>
+<span class="font-body-sm text-body-sm text-outline line-through">$19.99</span>
+</div>
+</div>
+<div class="flex items-center justify-between w-full h-9 rounded-full bg-surface-container-low p-0.5 shadow-inner">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center active:scale-90 transition-transform shadow-sm" onclick="updateQty(this, -1, 'Basmati Rice 5kg')">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-label-md text-label-md text-on-surface qty-display">1</span>
+<button class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center active:scale-90 transition-transform shadow-sm" onclick="updateQty(this, 1, 'Basmati Rice 5kg')">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<div class="product-card flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden p-2.5 justify-between relative transition-transform active:scale-[0.99]">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container-low mb-2">
+<img class="w-full h-full object-cover" data-alt="Artisanal dark chocolate bar broken into rich geometric chunks with cacao nibs and vanilla pod scattered around on raw parchment paper, editorial gourmet food still life" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCTa9xVqnHwh02_CCF4BFGk-_F-eNzQGicBWenYCvq33PEziakFp9FBQ82MIE2wGCf1irAHQ9VndVVOx5p7TihF5Q6HuM1dpfUsR9YZUPJOSBmQ8IJyM2C1nYMPxUyefbOi0JhdX8XnMjrr0MKuJCFqAfPQtuXl9YoPvTfi9raLFhuI-3s5tYryiGkJsFubnhLVnwoVrMPdswWmicPtopBXMUqfP0dBHm12_jLOH6gJa0CN0E-AXzn"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm tracking-tight shadow-sm">3 Left</span>
+<button class="wishlist-btn absolute top-1.5 right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant shadow-sm active:scale-75 transition-all" onclick="toggleWishlist(this, 'Dark Chocolate Bar')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Chocolatier Lyon</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface line-clamp-2 leading-tight mb-1">Artisan 85% Dark Belgian Chocolate Bar</h2>
+<div class="flex items-baseline gap-1.5 mb-2.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$4.50</span>
+<span class="font-body-sm text-body-sm text-outline">80g</span>
+</div>
+</div>
+<button class="w-full h-9 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" onclick="addToCart(this, 'Dark Chocolate Bar')">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+<div class="product-card flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden p-2.5 justify-between relative transition-transform active:scale-[0.99]">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container-low mb-2">
+<img class="w-full h-full object-cover" data-alt="Fresh raw chicken breast fillets garnished with fresh rosemary sprigs and pink peppercorns on butcher paper, natural studio light highlighting freshness and quality" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd-zZsPs7r9ggiAx-XV5c99kWAUMgjYDO1-5TF-ELOgUP6YtYJ3UF6K88aSevYtKVC6jR5it9yxASctZRMrIZDzglIl2uS_zLjiMhTFBN5gHuIGMn0dsT0r60W243qSiMJz1c6SNboOlT2Slq8co1gxdvTMxSKPixJqKgdQ68tpGtOiRtfAfKIldgxDoXMNmCxw1LcmC1bzbrvguuZl1EmiiY3_Z2N2RcfSeC9klpNia4Z3Wz6WFW_"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm tracking-tight shadow-sm">Pasture Raised</span>
+<button class="wishlist-btn absolute top-1.5 right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant shadow-sm active:scale-75 transition-all" onclick="toggleWishlist(this, 'Chicken Breast 1.2kg')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">FarmFresh</span>
+<div class="flex items-center gap-0.5 text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm">4.8</span>
+</div>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface line-clamp-2 leading-tight mb-1">Free-Range Heirloom Chicken Breast 1.2kg</h2>
+<div class="flex items-baseline gap-1.5 mb-2.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$12.90</span>
+<span class="font-body-sm text-body-sm text-outline line-through">$15.50</span>
+</div>
+</div>
+<button class="w-full h-9 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" onclick="addToCart(this, 'Chicken Breast 1.2kg')">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+<div class="product-card flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden p-2.5 justify-between relative transition-transform active:scale-[0.99]">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container-low mb-2">
+<img class="w-full h-full object-cover" data-alt="Fresh vibrant Atlantic salmon fillet cut over crushed sea ice with lemon slices and fresh dill, macro photography with glistening seafood texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_-X33bpZjYkqfcGpGlxn4mN-RoarU-gALQa9QbI89jPC_yULGWUdzp3YmqMuCdXUd59D019spCI8j6vkKBbJOFiC3W8g8Kieu5zDAPlLJHmak8PZt5rVyEl4Kb1xP0-EuozsN_6UR2v_97JpGpl6aROezJLIYrpMfSGIVIlA_K0QBLl2JvjSVGNwcFtDfADKC-ACOT7BH6Hi--R00A5K6E7S6v4i-5UBIHeC7c8hVVfeOIeNjFM7l"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tracking-tight shadow-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">ac_unit</span> Chilled
+        </span>
+<button class="wishlist-btn absolute top-1.5 right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant shadow-sm active:scale-75 transition-all" onclick="toggleWishlist(this, 'Salmon Fillet 500g')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">OceanCatch</span>
+<span class="font-label-sm text-label-sm text-outline">Wild</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface line-clamp-2 leading-tight mb-1">Wild Caught Atlantic Salmon Fillet 500g</h2>
+<div class="flex items-baseline gap-1.5 mb-2.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$14.25</span>
+<span class="font-body-sm text-body-sm text-outline">500g</span>
+</div>
+</div>
+<button class="w-full h-9 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" onclick="addToCart(this, 'Salmon Fillet 500g')">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+<div class="product-card flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden p-2.5 justify-between relative transition-transform active:scale-[0.99]">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container-low mb-2">
+<img class="w-full h-full object-cover" data-alt="Fresh washed crisp baby spinach leaves mixed with Tuscan kale inside an eco paper carton, emerald greens, pure farm-to-table organic packaging photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYMn2m-SV6k6dxyW1mxvugZJUE9aza3yyyoK7L4nIyYCyZEBz1kVlgDlKPJoPN-kRBw6rlM9RDOhVRbs71cELZjx7Z-fF60n0vJPPfcbxsR11V22shHVR9_7olU-9h_44ZHi6H4U1Xpw14W-T8jZM3yHVNPbaAohlPI_fhikBkAqUrYrOxSzfo-JMnBvvQhOo-a-GD5ciZte_I-4tSH14w62FQUXGz1wz1j0SfsWL-onInDTOodFw8"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm tracking-tight shadow-sm">Superfood</span>
+<button class="wishlist-btn absolute top-1.5 right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant shadow-sm active:scale-75 transition-all" onclick="toggleWishlist(this, 'Baby Spinach &amp; Kale')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">GreenEarth</span>
+<div class="flex items-center gap-0.5 text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm">4.9</span>
+</div>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface line-clamp-2 leading-tight mb-1">Organic Baby Spinach &amp; Kale Mix 300g</h2>
+<div class="flex items-baseline gap-1.5 mb-2.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$2.99</span>
+<span class="font-body-sm text-body-sm text-outline">Pouch</span>
+</div>
+</div>
+<button class="w-full h-9 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" onclick="addToCart(this, 'Baby Spinach &amp; Kale')">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+</section>
+<section class="px-margin-mobile pt-space-md pb-space-lg flex flex-col items-center gap-space-xs">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] animate-spin text-secondary">progress_activity</span>
+<span class="font-label-md text-label-md">Harvesting more fresh products...</span>
+</div>
+<div class="w-full max-w-[200px] h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-300" style="width: 4%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Showing 6 of 148 products</span>
+</section>
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 transform translate-y-10 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary text-on-primary shadow-xl" id="toastNotification">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMessage">Added to Cart</span>
+</div>
+</div>
+<script>
+  let cartCount = 3;
+
+  function toggleSortMenu() {
+    const menu = document.getElementById('sortMenu');
+    menu.classList.toggle('hidden');
+  }
+
+  function setSort(type) {
+    document.getElementById('currentSortLabel').innerText = type;
+    document.getElementById('sortMenu').classList.add('hidden');
+    showToast('Sorted by ' + type);
+  }
+
+  function togglePill(el) {
+    if (el.classList.contains('active-pill')) {
+      el.classList.remove('active-pill', 'bg-primary', 'text-on-primary');
+      el.classList.add('bg-surface-container', 'text-on-surface');
+    } else {
+      el.classList.add('active-pill', 'bg-primary', 'text-on-primary');
+      el.classList.remove('bg-surface-container', 'text-on-surface');
+    }
+  }
+
+  function removeFilter(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'scale(0.8)';
+      setTimeout(() => el.remove(), 200);
+    }
+  }
+
+  function clearAllFilters() {
+    const row = document.getElementById('activeFiltersRow');
+    if (row) {
+      row.style.opacity = '0';
+      setTimeout(() => {
+        row.innerHTML = '<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider flex-shrink-0">No filters active</span>';
+        row.style.opacity = '1';
+      }, 200);
+    }
+    const pills = document.querySelectorAll('.filter-pill');
+    pills.forEach(pill => {
+      pill.classList.remove('active-pill', 'bg-primary', 'text-on-primary');
+      pill.classList.add('bg-surface-container', 'text-on-surface');
+    });
+    showToast('All filters cleared');
+  }
+
+  function toggleWishlist(btn, itemTitle) {
+    const icon = btn.querySelector('.material-symbols-outlined');
+    const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+
+    if (isFilled) {
+      icon.style.fontVariationSettings = "'FILL' 0";
+      btn.classList.remove('text-tertiary-container');
+      btn.classList.add('text-on-surface-variant');
+      showToast('Removed from Wishlist');
+    } else {
+      icon.style.fontVariationSettings = "'FILL' 1";
+      btn.classList.remove('text-on-surface-variant');
+      btn.classList.add('text-tertiary-container');
+      showToast('Saved to Wishlist: ' + itemTitle);
+    }
+  }
+
+  function addToCart(btn, itemName) {
+    btn.classList.add('scale-95');
+    setTimeout(() => btn.classList.remove('scale-95'), 150);
+
+    cartCount++;
+    const badges = document.querySelectorAll('[data-path="cart"] span:last-child');
+    badges.forEach(b => b.innerText = cartCount);
+
+    showToast('Added ' + itemName + ' to cart');
+  }
+
+  function updateQty(btn, delta, itemName) {
+    const container = btn.parentElement;
+    const qtySpan = container.querySelector('.qty-display');
+    let currentQty = parseInt(qtySpan.innerText, 10);
+    currentQty += delta;
+    if (currentQty < 1) currentQty = 1;
+    qtySpan.innerText = currentQty;
+
+    showToast('Updated ' + itemName + ' (' + currentQty + ')');
+  }
+
+  let toastTimeout;
+  function showToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const message = document.getElementById('toastMessage');
+    if (!toast || !message) return;
+
+    message.innerText = msg;
+    toast.classList.remove('translate-y-10', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      toast.classList.add('translate-y-10', 'opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 2200);
+  }
+
+  document.addEventListener('click', function(e) {
+    const sortBtn = document.getElementById('sortBtn');
+    const sortMenu = document.getElementById('sortMenu');
+    if (sortBtn && sortMenu && !sortBtn.contains(e.target) && !sortMenu.contains(e.target)) {
+      sortMenu.classList.add('hidden');
+    }
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">storefront</span><span class="font-label-sm text-label-sm">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] transition-colors text-primary font-bold" data-path="categories" href="#"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-sm text-label-sm">Categories</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors" data-path="deals-explore" href="#"><span class="material-symbols-outlined text-[24px]">local_fire_department</span><span class="font-label-sm text-label-sm">Explore</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors" data-path="wishlist" href="#"><span class="material-symbols-outlined text-[24px]">favorite</span><span class="font-label-sm text-label-sm">Wishlist</span></a><a class="relative flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors" data-path="cart" href="#"><span class="material-symbols-outlined text-[24px]">shopping_cart</span><span class="absolute top-0 right-3 flex items-center justify-center min-w-[14px] h-[14px] px-0.5 bg-secondary text-on-secondary font-label-sm text-[9px] rounded-full">3</span><span class="font-label-sm text-label-sm">Cart</span></a></div></nav></body></html>

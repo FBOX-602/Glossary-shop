@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - FreshMart</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Global & Page CSS -->
+    <link rel="stylesheet" href="../../../css/global.css">
+    <link rel="stylesheet" href="../../../css/components.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+    <link rel="stylesheet" href="product-details.css">
+</head>
+<body>
+
+        <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-info">
+                <span><i class="fas fa-truck-fast"></i> Express 1-Hour Delivery Available</span>
+                <span><i class="fas fa-shield-halved"></i> 100% Organic & Fresh Harvest Guaranteed</span>
+            </div>
+            <div class="top-bar-info">
+                <span><i class="fas fa-headset"></i> Support: +1 (800) 555-FRESH</span>
+                <span><i class="fas fa-envelope"></i> help@freshmart.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="header">
+        <div class="container navbar">
+            <!-- Brand Logo -->
+            <a href="../../../index.html" class="brand-logo">
+                <i class="fas fa-basket-shopping"></i>
+                Fresh<span>Mart</span>
+            </a>
+
+            <!-- Global Live Search -->
+            <div class="header-search">
+                <div class="search-form">
+                    <input type="text" class="search-input" placeholder="Search for rice, fruits, vegetables..." />
+                    <button class="search-btn" title="Search"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-suggestions"></div>
+            </div>
+
+            <!-- Action Navigation Icons -->
+            <div class="header-actions">
+                <a href="../../../pages/wishlist/index.html" class="action-btn" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span>Wishlist</span>
+                    <span class="nav-badge wishlist-count-badge" style="display:none;">0</span>
+                </a>
+
+                <a href="../../../pages/cart/index.html" class="action-btn" title="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Cart</span>
+                    <span class="nav-badge cart-count-badge" style="display:none;">0</span>
+                </a>
+
+                <a href="../../../pages/checkout/index.html" class="btn btn-primary btn-sm">
+                    Checkout <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Horizontal Category Shortcut Bar -->
+        <nav class="category-nav-bar">
+            <div class="container category-nav-inner">
+                <a href="../../../index.html" class="cat-nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="../../../pages/products/product-list/index.html" class="cat-nav-link"><i class="fas fa-th-large"></i> All Products</a>
+                <a href="../../../pages/categories/rice/index.html" class="cat-nav-link">Rice</a>
+                <a href="../../../pages/categories/chocolate/index.html" class="cat-nav-link">Chocolate</a>
+                <a href="../../../pages/categories/frozen/index.html" class="cat-nav-link">Frozen Items</a>
+                <a href="../../../pages/categories/meat/index.html" class="cat-nav-link">Meat</a>
+                <a href="../../../pages/categories/chicken/index.html" class="cat-nav-link">Chicken</a>
+                <a href="../../../pages/categories/fish/index.html" class="cat-nav-link">Fish</a>
+                <a href="../../../pages/categories/vegetables/index.html" class="cat-nav-link">Vegetables</a>
+                <a href="../../../pages/categories/fruits/index.html" class="cat-nav-link">Fruits</a>
+                <a href="../../../pages/categories/snacks/index.html" class="cat-nav-link">Snacks</a>
+                <a href="../../../pages/categories/beverages/index.html" class="cat-nav-link">Beverages</a>
+                <a href="../../../pages/categories/dairy/index.html" class="cat-nav-link">Dairy</a>
+                <a href="../../../pages/categories/cooking-essentials/index.html" class="cat-nav-link">Cooking Essentials</a>
+                <a href="../../../pages/categories/spices/index.html" class="cat-nav-link">Spices</a>
+                <a href="../../../pages/categories/personal-care/index.html" class="cat-nav-link">Personal Care</a>
+                <a href="../../../pages/categories/household/index.html" class="cat-nav-link">Household Items</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="section-padding">
+        <div class="container" id="product-details-content">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumb">
+                <a href="../../../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a id="breadcrumb-category" href="#">Category</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="breadcrumb-title">Product Name</span>
+            </div>
+
+            <!-- Product Details Main Layout -->
+            <div class="product-details-container">
+                <!-- Gallery Column -->
+                <div class="product-gallery">
+                    <div class="gallery-main-frame">
+                        <img id="main-product-img" src="" alt="Product Image" />
+                    </div>
+                    <div class="gallery-thumbnails" id="gallery-thumbs"></div>
+                </div>
+
+                <!-- Info Column -->
+                <div class="product-details-info">
+                    <div>
+                        <span class="detail-brand-badge" id="detail-brand">BRAND</span>
+                        <h1 class="detail-title" id="detail-title">Loading Product...</h1>
+                        
+                        <div class="detail-meta-row">
+                            <div id="detail-rating-box"></div>
+                            <span id="detail-sku">SKU: ---</span>
+                            <span id="detail-stock-badge" class="badge badge-stock">In Stock</span>
+                        </div>
+
+                        <!-- Price Section -->
+                        <div class="detail-price-box">
+                            <span class="detail-current-price" id="detail-current-price">৳0.00</span>
+                            <span class="detail-old-price" id="detail-old-price">৳0.00</span>
+                            <span class="badge badge-discount" id="detail-discount-badge" style="display:none;">-0% OFF</span>
+                        </div>
+
+                        <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.5rem;" id="detail-short-desc">
+                            Short product summary goes here...
+                        </p>
+
+                        <!-- Variant Switcher -->
+                        <div class="detail-variant-group">
+                            <label style="font-weight:700; font-size:0.9rem;">Select Weight / Pack Size:</label>
+                            <div class="variant-btn-group" id="variant-chips-container">
+                                <!-- Variant chips -->
+                            </div>
+                        </div>
+
+                        <!-- Quantity Selector -->
+                        <div style="margin-bottom:2rem; display:flex; align-items:center; gap:1rem;">
+                            <label style="font-weight:700; font-size:0.9rem;">Quantity:</label>
+                            <div class="qty-selector">
+                                <button class="qty-btn" onclick="adjustDetailQty(-1)">-</button>
+                                <input type="text" class="qty-input" id="detail-qty-input" value="1" readonly />
+                                <button class="qty-btn" onclick="adjustDetailQty(1)">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Primary CTA Buttons -->
+                        <div class="action-row">
+                            <button class="btn btn-primary btn-lg" onclick="executeAddToCart()" style="flex:1;">
+                                <i class="fas fa-shopping-bag"></i> Add to Cart
+                            </button>
+                            <button class="btn btn-secondary btn-lg" onclick="executeBuyNow()" style="flex:1;">
+                                Buy Now <i class="fas fa-bolt"></i>
+                            </button>
+                            <button class="wishlist-btn" id="detail-wishlist-btn" onclick="toggleDetailWishlist()" style="position:relative; top:0; right:0; width:48px; height:48px; font-size:1.25rem;">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Trust Bar -->
+                    <div style="display:flex; gap:1.5rem; border-top:1px solid var(--border-light); padding-top:1.25rem; font-size:0.85rem; color:var(--text-muted);">
+                        <span><i class="fas fa-truck text-primary"></i> Same day delivery</span>
+                        <span><i class="fas fa-rotate-left text-primary"></i> 7-Day Replacement</span>
+                        <span><i class="fas fa-shield text-primary"></i> Freshness Guarantee</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabbed Specifications & Description -->
+            <div class="product-tabs-container">
+                <div class="tab-headers">
+                    <button class="tab-btn active" onclick="switchTab(this, 'tab-desc')">Product Description</button>
+                    <button class="tab-btn" onclick="switchTab(this, 'tab-specs')">Specifications & Expiry</button>
+                </div>
+
+                <div class="tab-content active" id="tab-desc">
+                    <p id="tab-desc-content" style="font-size:0.975rem; color:var(--text-main); line-height:1.8;"></p>
+                </div>
+
+                <div class="tab-content" id="tab-specs">
+                    <table class="specs-table">
+                        <tbody id="specs-table-body">
+                            <!-- Dynamic specifications rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Related Products Section -->
+            <section class="section-padding" id="related-section" style="margin-top:2rem;">
+                <div class="section-header">
+                    <h2 class="section-title">Related Products</h2>
+                    <p class="section-subtitle">You may also like these items from the same category</p>
+                </div>
+                <div class="products-grid" id="related-products-grid"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreshMart Grocery. All rights reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fas fa-money-bill-1"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase Backend SDK & Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../js/supabase/config.js"></script>
+    <script src="../../../js/supabase/client.js"></script>
+    <script src="../../../js/supabase/categories.js"></script>
+    <script src="../../../js/supabase/products.js"></script>
+    <script src="../../../js/supabase/banners.js"></script>
+    <script src="../../../js/supabase/orders.js"></script>
+    <script src="../../../js/supabase/customers.js"></script>
+    <script src="../../../js/supabase/settings.js"></script>
+    <script src="../../../js/supabase/storage.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../../js/data.js"></script>
+    <script src="../../../js/storage.js"></script>
+    <script src="../../../js/products.js"></script>
+    <script src="../../../js/main.js"></script>
+    <script src="product-details.js"></script>
+
+</body>
+</html>

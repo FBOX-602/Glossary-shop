@@ -1,0 +1,9 @@
+/* Categories Management CSS */
+.cat-thumb-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: var(--admin-bg);
+    padding: 4px;
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Groceries & Products - FreshMart</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../../css/global.css">
+    <link rel="stylesheet" href="../../../css/components.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+    <link rel="stylesheet" href="product-list.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-info">
+                <span><i class="fas fa-truck-fast"></i> Express 1-Hour Delivery</span>
+            </div>
+            <div class="top-bar-info">
+                <span><i class="fas fa-headset"></i> Support: +1 (800) 555-FRESH</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="../../../index.html" class="brand-logo">
+                <i class="fas fa-basket-shopping"></i> Fresh<span>Mart</span>
+            </a>
+
+            <div class="header-search">
+                <div class="search-form">
+                    <input type="text" id="catalogue-search-input" class="search-input" placeholder="Search product name, brand or category..." oninput="applyGlobalFilters()" />
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-suggestions"></div>
+            </div>
+
+            <div class="header-actions">
+                <a href="../../wishlist/index.html" class="action-btn" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span>Wishlist</span>
+                    <span class="nav-badge wishlist-count-badge" style="display:none;">0</span>
+                </a>
+
+                <a href="../../cart/index.html" class="action-btn" title="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Cart</span>
+                    <span class="nav-badge cart-count-badge" style="display:none;">0</span>
+                </a>
+
+                <a href="../../checkout/index.html" class="btn btn-primary btn-sm">Checkout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>All Products Catalogue</span>
+            </div>
+
+            <div class="catalogue-layout">
+                <!-- Sidebar Filters -->
+                <aside class="filter-sidebar">
+                    <h3 style="font-size:1.1rem; margin-bottom:1rem; border-bottom:2px solid var(--primary); padding-bottom:0.4rem;">Refine Search</h3>
+
+                    <!-- Categories Filter -->
+                    <div class="filter-group">
+                        <div class="filter-title">Categories</div>
+                        <div id="category-filter-group" style="max-height:200px; overflow-y:auto;"></div>
+                    </div>
+
+                    <!-- Max Price -->
+                    <div class="filter-group">
+                        <div class="filter-title">Max Price</div>
+                        <input type="range" id="price-range-slider" min="50" max="5000" step="50" value="50" style="width:100%; accent-color:var(--primary);" />
+                        <div style="display:flex; justify-between; margin-top:0.1000rem; font-size:0.85rem; font-weight:700;">
+                            <span>৳10.00</span>
+                            <span id="price-range-val" class="text-primary">৳5000.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Brands -->
+                    <div class="filter-group">
+                        <div class="filter-title">Brands</div>
+                        <div id="brand-filter-group" style="max-height:180px; overflow-y:auto;"></div>
+                    </div>
+
+                    <!-- Stock Status -->
+                    <div class="filter-group">
+                        <div class="filter-title">Availability</div>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" id="in-stock-checkbox" onchange="applyGlobalFilters()" />
+                            <span>In Stock Only</span>
+                        </label>
+                    </div>
+                </aside>
+
+                <!-- Grid & Controls -->
+                <section>
+                    <div class="sort-bar">
+                        <div>
+                            Showing <span id="catalogue-item-count" style="font-weight:700; color:var(--primary);">0</span> items
+                        </div>
+
+                        <div style="display:flex; align-items:center; gap:0.5rem;">
+                            <label for="sort-select" style="font-size:0.875rem; font-weight:600;">Sort By:</label>
+                            <select id="sort-select" class="sort-select">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="discount">Biggest Discount</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="catalogue-products-grid"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreshMart Grocery. All rights reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fas fa-money-bill-1"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase Backend SDK & Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../js/supabase/config.js"></script>
+    <script src="../../../js/supabase/client.js"></script>
+    <script src="../../../js/supabase/categories.js"></script>
+    <script src="../../../js/supabase/products.js"></script>
+    <script src="../../../js/supabase/banners.js"></script>
+    <script src="../../../js/supabase/orders.js"></script>
+    <script src="../../../js/supabase/customers.js"></script>
+    <script src="../../../js/supabase/settings.js"></script>
+    <script src="../../../js/supabase/storage.js"></script>
+
+    <script src="../../../js/data.js"></script>
+    <script src="../../../js/storage.js"></script>
+    <script src="../../../js/products.js"></script>
+    <script src="../../../js/main.js"></script>
+    <script src="product-list.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist - FreshMart</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="wishlist.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-info">
+                <span><i class="fas fa-heart text-danger"></i> Saved Groceries</span>
+            </div>
+            <div class="top-bar-info">
+                <span><i class="fas fa-headset"></i> Support: +1 (800) 555-FRESH</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="../../index.html" class="brand-logo">
+                <i class="fas fa-basket-shopping"></i> Fresh<span>Mart</span>
+            </a>
+
+            <div class="header-actions">
+                <a href="index.html" class="action-btn" title="Wishlist">
+                    <i class="fas fa-heart text-danger"></i>
+                    <span>Wishlist</span>
+                    <span class="nav-badge wishlist-count-badge" style="display:none;">0</span>
+                </a>
+
+                <a href="../cart/index.html" class="action-btn" title="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Cart</span>
+                    <span class="nav-badge cart-count-badge" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>My Saved Wishlist</span>
+            </div>
+
+            <div class="section-header">
+                <h1 class="section-title">My Saved Wishlist</h1>
+                <p class="section-subtitle">Keep track of your favorite items and add them to cart anytime</p>
+            </div>
+
+            <!-- Empty State -->
+            <div id="wishlist-empty-view" style="display:none; text-align:center; padding:4rem; background:var(--bg-surface); border-radius:var(--radius-xl); box-shadow:var(--shadow-sm);">
+                <i class="far fa-heart" style="font-size:4rem; color:var(--text-light); margin-bottom:1rem;"></i>
+                <h2>Your Wishlist is Empty</h2>
+                <p style="color:var(--text-muted); margin-top:0.5rem; margin-bottom:1.5rem;">Click the heart icon on any product to save it here for later.</p>
+                <a href="../../index.html" class="btn btn-primary btn-lg">Browse Products <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="wishlist-products-grid">
+                <!-- Rendered by wishlist.js -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreshMart Grocery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase Backend SDK & Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/supabase/config.js"></script>
+    <script src="../../js/supabase/client.js"></script>
+    <script src="../../js/supabase/categories.js"></script>
+    <script src="../../js/supabase/products.js"></script>
+    <script src="../../js/supabase/banners.js"></script>
+    <script src="../../js/supabase/orders.js"></script>
+    <script src="../../js/supabase/customers.js"></script>
+    <script src="../../js/supabase/settings.js"></script>
+    <script src="../../js/supabase/storage.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../js/data.js"></script>
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/products.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="wishlist.js"></script>
+
+</body>
+</html>

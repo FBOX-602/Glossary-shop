@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Fruits - FreshMart Grocery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../css/global.css">
+    <link rel="stylesheet" href="../../../css/components.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+    <link rel="stylesheet" href="fruits.css">
+</head>
+<body>
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-info">
+                <span><i class="fas fa-truck-fast"></i> Express 1-Hour Delivery Available</span>
+                <span><i class="fas fa-shield-halved"></i> 100% Organic & Fresh Harvest Guaranteed</span>
+            </div>
+            <div class="top-bar-info">
+                <span><i class="fas fa-headset"></i> Support: +1 (800) 555-FRESH</span>
+                <span><i class="fas fa-envelope"></i> help@freshmart.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="header">
+        <div class="container navbar">
+            <!-- Brand Logo -->
+            <a href="../../../index.html" class="brand-logo">
+                <i class="fas fa-basket-shopping"></i>
+                Fresh<span>Mart</span>
+            </a>
+
+            <!-- Global Live Search -->
+            <div class="header-search">
+                <div class="search-form">
+                    <input type="text" class="search-input" placeholder="Search for rice, fruits, vegetables..." />
+                    <button class="search-btn" title="Search"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-suggestions"></div>
+            </div>
+
+            <!-- Action Navigation Icons -->
+            <div class="header-actions">
+                <a href="../../../pages/wishlist/index.html" class="action-btn" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span>Wishlist</span>
+                    <span class="nav-badge wishlist-count-badge" style="display:none;">0</span>
+                </a>
+
+                <a href="../../../pages/cart/index.html" class="action-btn" title="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Cart</span>
+                    <span class="nav-badge cart-count-badge" style="display:none;">0</span>
+                </a>
+
+                <a href="../../../pages/checkout/index.html" class="btn btn-primary btn-sm">
+                    Checkout <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Horizontal Category Shortcut Bar -->
+        <nav class="category-nav-bar">
+            <div class="container category-nav-inner">
+                <a href="../../../index.html" class="cat-nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="../../../pages/products/product-list/index.html" class="cat-nav-link"><i class="fas fa-th-large"></i> All Products</a>
+                <a href="../../../pages/categories/rice/index.html" class="cat-nav-link">Rice</a>
+                <a href="../../../pages/categories/chocolate/index.html" class="cat-nav-link">Chocolate</a>
+                <a href="../../../pages/categories/frozen/index.html" class="cat-nav-link">Frozen Items</a>
+                <a href="../../../pages/categories/meat/index.html" class="cat-nav-link">Meat</a>
+                <a href="../../../pages/categories/chicken/index.html" class="cat-nav-link">Chicken</a>
+                <a href="../../../pages/categories/fish/index.html" class="cat-nav-link">Fish</a>
+                <a href="../../../pages/categories/vegetables/index.html" class="cat-nav-link">Vegetables</a>
+                <a href="../../../pages/categories/fruits/index.html" class="cat-nav-link">Fruits</a>
+                <a href="../../../pages/categories/snacks/index.html" class="cat-nav-link">Snacks</a>
+                <a href="../../../pages/categories/beverages/index.html" class="cat-nav-link">Beverages</a>
+                <a href="../../../pages/categories/dairy/index.html" class="cat-nav-link">Dairy</a>
+                <a href="../../../pages/categories/cooking-essentials/index.html" class="cat-nav-link">Cooking Essentials</a>
+                <a href="../../../pages/categories/spices/index.html" class="cat-nav-link">Spices</a>
+                <a href="../../../pages/categories/personal-care/index.html" class="cat-nav-link">Personal Care</a>
+                <a href="../../../pages/categories/household/index.html" class="cat-nav-link">Household Items</a>
+            </div>
+        </nav>
+    </header>
+<main class="section-padding">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../../products/product-list/index.html">Categories</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Fresh Fruits</span>
+            </div>
+
+            <div class="category-banner">
+                <div class="container category-banner-content">
+                    <div class="category-banner-text">
+                        <h1>Fresh Fruits</h1>
+                        <p>Crisp Red Apples, Bananas, Berries & Citrus Fruits</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-page-layout">
+                <aside class="filter-sidebar">
+                    <h3 style="font-size:1.1rem; margin-bottom:1rem; border-bottom:2px solid var(--primary); padding-bottom:0.4rem;">Filters</h3>
+
+                    <div class="filter-group">
+                        <div class="filter-title">Max Price</div>
+                        <input type="range" id="price-range-slider" min="50" max="5000" step="50" style="width:100%; accent-color:var(--primary);" />
+                        <div style="display:flex; justify-between; margin-top:0.1000rem; font-size:0.85rem; font-weight:700;">
+                            <span>৳10.00</span>
+                            <span id="price-range-val" class="text-primary">৳5000.00</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-title">Brands</div>
+                        <div id="brand-filter-group"></div>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-title">Availability</div>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" id="in-stock-checkbox" onchange="applyFilters()" />
+                            <span>In Stock Only</span>
+                        </label>
+                    </div>
+                </aside>
+
+                <section>
+                    <div class="sort-bar">
+                        <div>
+                            Showing <span id="category-item-count" style="font-weight:700; color:var(--primary);">0</span> products
+                        </div>
+
+                        <div style="display:flex; align-items:center; gap:0.5rem;">
+                            <label for="sort-select" style="font-size:0.875rem; font-weight:600;">Sort By:</label>
+                            <select id="sort-select" class="sort-select">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="discount">Biggest Discount</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="category-products-grid"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreshMart Grocery. All rights reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fas fa-money-bill-1"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../../js/data.js"></script>
+    <script src="../../../js/storage.js"></script>
+    <script src="../../../js/products.js"></script>
+    <script src="../../../js/main.js"></script>
+    <script src="fruits.js"></script>
+</body>
+</html>

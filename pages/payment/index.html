@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway - FreshMart</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-info">
+                <span><i class="fas fa-lock"></i> 256-Bit SSL Encrypted Payment Portal</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="../../index.html" class="brand-logo">
+                <i class="fas fa-basket-shopping"></i> Fresh<span>Mart</span>
+            </a>
+
+            <div style="font-weight:700; color:var(--text-muted);">
+                Step 1: Shipping &rarr; <span class="text-primary"><i class="fas fa-credit-card"></i> Step 2: Payment</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../cart/index.html">Cart</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../checkout/index.html">Checkout</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Payment</span>
+            </div>
+
+            <div class="payment-layout">
+                <!-- Payment Options Selection -->
+                <div class="payment-methods-card">
+                    <h3 style="font-size:1.3rem; margin-bottom:1.5rem; border-bottom:1px solid var(--border-color); padding-bottom:0.75rem;">Select Payment Method</h3>
+
+                    <!-- 1. Cash on Delivery -->
+                    <div class="payment-method-tile active" onclick="selectPaymentMethod(this, 'cod')">
+                        <div class="tile-header">
+                            <div class="tile-title">
+                                <i class="fas fa-money-bill-wave text-primary" style="font-size:1.5rem;"></i>
+                                <span>Cash on Delivery (COD)</span>
+                            </div>
+                            <input type="radio" name="payment" value="cod" checked />
+                        </div>
+                        <div class="payment-details-form active" id="form-cod">
+                            <p style="font-size:0.875rem; color:var(--text-muted);">Pay in cash or via mobile POS when our courier delivers your fresh groceries to your doorstep. Zero extra fee.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Credit / Debit Card -->
+                    <div class="payment-method-tile" onclick="selectPaymentMethod(this, 'card')">
+                        <div class="tile-header">
+                            <div class="tile-title">
+                                <i class="fas fa-credit-card text-info" style="font-size:1.5rem;"></i>
+                                <span>Credit / Debit Card</span>
+                            </div>
+                            <div style="display:flex; gap:0.5rem; font-size:1.4rem; color:var(--text-muted);">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-amex"></i>
+                            </div>
+                        </div>
+                        <div class="payment-details-form" id="form-card">
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                                <div style="grid-column:1/-1;">
+                                    <label class="form-label">Cardholder Name</label>
+                                    <input type="text" id="card-name" class="form-input" placeholder="John Doe" />
+                                </div>
+                                <div style="grid-column:1/-1;">
+                                    <label class="form-label">Card Number</label>
+                                    <input type="text" id="card-number" class="form-input" placeholder="4532 •••• •••• 8920" />
+                                </div>
+                                <div>
+                                    <label class="form-label">Expiry Date</label>
+                                    <input type="text" class="form-input" placeholder="MM/YY" />
+                                </div>
+                                <div>
+                                    <label class="form-label">CVC / CVV</label>
+                                    <input type="password" class="form-input" maxlength="4" placeholder="123" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Mobile Banking -->
+                    <div class="payment-method-tile" onclick="selectPaymentMethod(this, 'mobile')">
+                        <div class="tile-header">
+                            <div class="tile-title">
+                                <i class="fas fa-mobile-screen-button text-accent" style="font-size:1.5rem;"></i>
+                                <span>Mobile Banking (bKash / Nagad / Rocket)</span>
+                            </div>
+                            <input type="radio" name="payment" value="mobile" />
+                        </div>
+                        <div class="payment-details-form" id="form-mobile">
+                            <div style="font-size:0.875rem; color:var(--text-muted); margin-bottom:1rem;">
+                                Select your mobile wallet provider and complete authorization.
+                            </div>
+                            <div style="display:flex; gap:1rem; margin-bottom:1rem;">
+                                <button type="button" class="btn btn-outline btn-sm active" style="border-color:var(--primary);">bKash</button>
+                                <button type="button" class="btn btn-outline btn-sm">Nagad</button>
+                                <button type="button" class="btn btn-outline btn-sm">Rocket</button>
+                            </div>
+                            <label class="form-label">Account Number</label>
+                            <input type="tel" class="form-input" placeholder="01700-000000" />
+                        </div>
+                    </div>
+
+                    <!-- 4. Online Payment Gateway -->
+                    <div class="payment-method-tile" onclick="selectPaymentMethod(this, 'gateway')">
+                        <div class="tile-header">
+                            <div class="tile-title">
+                                <i class="fas fa-globe text-primary" style="font-size:1.5rem;"></i>
+                                <span>Online Payment Gateway API</span>
+                            </div>
+                            <input type="radio" name="payment" value="gateway" />
+                        </div>
+                        <div class="payment-details-form" id="form-gateway">
+                            <p style="font-size:0.875rem; color:var(--text-muted);">Redirects securely to real payment gateway endpoint (Stripe / PayPal / SSLCommerz ready).</p>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-block btn-lg" onclick="processPaymentSubmission()" style="margin-top:2rem;">
+                        <i class="fas fa-lock"></i> Confirm & Place Order
+                    </button>
+                </div>
+
+                <!-- Order Summary & Shipping Address Sidebar -->
+                <div style="background:var(--bg-surface); border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm); height:fit-content;">
+                    <h3 style="font-size:1.15rem; margin-bottom:1rem; border-bottom:1px solid var(--border-color); padding-bottom:0.75rem;">Delivery Destination</h3>
+
+                    <div style="font-size:0.875rem; color:var(--text-muted); margin-bottom:1.5rem; line-height:1.6;">
+                        <div style="font-weight:700; color:var(--text-main);" id="pay-customer-name">Loading...</div>
+                        <div id="pay-customer-phone">---</div>
+                        <div id="pay-customer-address">---</div>
+                    </div>
+
+                    <h4 style="font-size:1rem; margin-bottom:0.75rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">Amount Due</h4>
+                    <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:0.5rem;">
+                        <span>Subtotal</span>
+                        <span id="pay-subtotal">৳0.00</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:0.5rem;">
+                        <span>Delivery Charge</span>
+                        <span id="pay-delivery">৳0.00</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; font-size:1.3rem; font-weight:800; border-top:2px solid var(--border-color); padding-top:0.75rem; margin-top:0.75rem;">
+                        <span>Grand Total</span>
+                        <span id="pay-total" class="text-primary">৳0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreshMart Grocery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/data.js"></script>
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="payment.js"></script>
+</body>
+</html>
