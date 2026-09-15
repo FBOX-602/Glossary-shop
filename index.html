@@ -128,22 +128,29 @@
             </div>
         </section>
 
-        <!-- 2. Product Categories Grid Section -->
+        <!-- 2. Product Categories Grid Section (Single Clean Row) -->
         <section class="section-padding bg-surface" style="border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
             <div class="container">
-                <div class="section-header justify-between">
+                <div class="section-header">
                     <div>
                         <h2 class="section-title">Shop by Category</h2>
                         <p class="section-subtitle">Select a category to browse full product listings</p>
                     </div>
-                    <a href="pages/products/product-list/index.html" class="btn btn-outline btn-sm">View All Categories <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="category-grid" id="homepage-category-grid">
-                    <!-- Dynamic categories rendered via JavaScript -->
+                    <!-- Dynamic single row of 8 categories rendered via JavaScript -->
+                </div>
+
+                <!-- Centered View All Categories Button Below -->
+                <div style="text-align:center; margin-top:2rem;">
+                    <a href="pages/products/product-list/index.html" class="btn btn-outline btn-lg" style="padding:0.7rem 2.5rem; font-weight:700; border-radius:50px;">
+                        View All Categories <i class="fas fa-arrow-right" style="margin-left:0.5rem;"></i>
+                    </a>
                 </div>
             </div>
         </section>
+
 
         <!-- 3. Category-Based Product Sections -->
         
@@ -359,9 +366,10 @@
         });
 
         function renderHomepageCategories() {
-            const categories = getAllCategories();
+            const categories = getAllCategories().slice(0, 8); // Display 1 single clean row of 8 categories
             const container = document.getElementById('homepage-category-grid');
             if (!container) return;
+
 
             container.innerHTML = categories.map(cat => `
                 <div class="category-card" onclick="window.location.href='pages/categories/${cat.id}/index.html'">
