@@ -63,3 +63,24 @@ async function saveCustomerToSupabase(c) {
         return false;
     }
 }
+
+async function deleteCustomerFromSupabase(custId) {
+    const client = getSupabaseClient();
+    if (!client) return false;
+
+    try {
+        const { error } = await client
+            .from('customers')
+            .delete()
+            .eq('id', custId);
+
+        if (error) {
+            console.error('Supabase deleteCustomer error:', error.message);
+            return false;
+        }
+        return true;
+    } catch (err) {
+        console.error('Supabase deleteCustomer failed:', err);
+        return false;
+    }
+}

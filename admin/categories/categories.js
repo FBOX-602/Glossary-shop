@@ -143,11 +143,12 @@ async function deleteCategoryItem(id) {
         if (!confirm('Are you sure you want to delete this category?')) return;
     }
 
-    let categories = getCategoriesDB();
-    categories = categories.filter(c => c.id !== id);
-    saveCategoriesDB(categories);
-
-    if (typeof deleteCategoryFromSupabase === 'function') {
-        await deleteCategoryFromSupabase(id);
+    if (typeof deleteCategoryDB === 'function') {
+        await deleteCategoryDB(id);
+    } else {
+        let categories = getCategoriesDB();
+        categories = categories.filter(c => c.id !== id);
+        saveCategoriesDB(categories);
     }
 }
+

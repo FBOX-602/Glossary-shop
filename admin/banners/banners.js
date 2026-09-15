@@ -136,11 +136,12 @@ function toggleBannerStatus(id) {
 
 async function deleteBannerItem(id) {
     if (!confirm('Are you sure you want to delete this banner?')) return;
-    let banners = getBannersDB();
-    banners = banners.filter(b => b.id !== id);
-    saveBannersDB(banners);
-
-    if (typeof deleteBannerFromSupabase === 'function') {
-        await deleteBannerFromSupabase(id);
+    if (typeof deleteBannerDB === 'function') {
+        await deleteBannerDB(id);
+    } else {
+        let banners = getBannersDB();
+        banners = banners.filter(b => b.id !== id);
+        saveBannersDB(banners);
     }
 }
+

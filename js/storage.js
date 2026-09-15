@@ -40,7 +40,7 @@ if (typeof window !== 'undefined') {
 async function syncWithSupabaseAsync() {
     if (typeof fetchCategoriesFromSupabase === 'function') {
         const remoteCats = await fetchCategoriesFromSupabase();
-        if (remoteCats && remoteCats.length > 0) {
+        if (remoteCats) {
             localStorage.setItem(CATEGORIES_DB_KEY, JSON.stringify(remoteCats));
             window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'categories' } }));
         }
@@ -48,7 +48,7 @@ async function syncWithSupabaseAsync() {
 
     if (typeof fetchProductsFromSupabase === 'function') {
         const remoteProds = await fetchProductsFromSupabase();
-        if (remoteProds && remoteProds.length > 0) {
+        if (remoteProds) {
             localStorage.setItem(PRODUCTS_DB_KEY, JSON.stringify(remoteProds));
             window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'products' } }));
         }
@@ -56,7 +56,7 @@ async function syncWithSupabaseAsync() {
 
     if (typeof fetchBannersFromSupabase === 'function') {
         const remoteBanners = await fetchBannersFromSupabase();
-        if (remoteBanners && remoteBanners.length > 0) {
+        if (remoteBanners) {
             localStorage.setItem(BANNERS_DB_KEY, JSON.stringify(remoteBanners));
             window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'banners' } }));
         }
@@ -72,7 +72,7 @@ async function syncWithSupabaseAsync() {
 
     if (typeof fetchOrdersFromSupabase === 'function') {
         const remoteOrders = await fetchOrdersFromSupabase();
-        if (remoteOrders && remoteOrders.length > 0) {
+        if (remoteOrders) {
             localStorage.setItem(ORDERS_KEY, JSON.stringify(remoteOrders));
             window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'orders' } }));
         }
@@ -80,14 +80,14 @@ async function syncWithSupabaseAsync() {
 
     if (typeof fetchCustomersFromSupabase === 'function') {
         const remoteCusts = await fetchCustomersFromSupabase();
-        if (remoteCusts && remoteCusts.length > 0) {
+        if (remoteCusts) {
             localStorage.setItem(CUSTOMERS_DB_KEY, JSON.stringify(remoteCusts));
             window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'customers' } }));
         }
     }
 }
 
-// --- Reactive Database Accessors ---
+// --- Reactive Database Accessors & Deletion Handlers ---
 function getProductsDB() {
     initDatabase();
     try {
@@ -102,9 +102,18 @@ function saveProductsDB(products) {
     localStorage.setItem(PRODUCTS_DB_KEY, JSON.stringify(products));
     window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'products' } }));
 
-    // Async sync to Supabase
     if (typeof saveProductToSupabase === 'function') {
         products.forEach(p => saveProductToSupabase(p));
+    }
+}
+
+async function deleteProductDB(productId) {
+    let products = getProductsDB().filter(p => p.id !== productId);
+    localStorage.setItem(PRODUCTS_DB_KEY, JSON.stringify(products));
+    window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'products' } }));
+
+    if (typeof deleteProductFromSupabase === 'function') {
+        await deleteProductFromSupabase(productId);
     }
 }
 
@@ -127,6 +136,16 @@ function saveCategoriesDB(categories) {
     }
 }
 
+async function deleteCategoryDB(categoryId) {
+    let categories = getCategoriesDB().filter(c => c.id !== categoryId);
+    localStorage.setItem(CATEGORIES_DB_KEY, JSON.stringify(categories));
+    window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'categories' } }));
+
+    if (typeof deleteCategoryFromSupabase === 'function') {
+        await deleteCategoryFromSupabase(categoryId);
+    }
+}
+
 function getBannersDB() {
     initDatabase();
     try {
@@ -143,6 +162,16 @@ function saveBannersDB(banners) {
 
     if (typeof saveBannerToSupabase === 'function') {
         banners.forEach(b => saveBannerToSupabase(b));
+    }
+}
+
+async function deleteBannerDB(bannerId) {
+    let banners = getBannersDB().filter(b => b.id !== bannerId);
+    localStorage.setItem(BANNERS_DB_KEY, JSON.stringify(banners));
+    window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'banners' } }));
+
+    if (typeof deleteBannerFromSupabase === 'function') {
+        await deleteBannerFromSupabase(bannerId);
     }
 }
 
@@ -180,6 +209,16 @@ function saveCustomersDB(customers) {
 
     if (typeof saveCustomerToSupabase === 'function') {
         customers.forEach(c => saveCustomerToSupabase(c));
+    }
+}
+
+async function deleteCustomerDB(customerId) {
+    let customers = getCustomersDB().filter(c => c.id !== customerId);
+    localStorage.setItem(CUSTOMERS_DB_KEY, JSON.stringify(customers));
+    window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'customers' } }));
+
+    if (typeof deleteCustomerFromSupabase === 'function') {
+        await deleteCustomerFromSupabase(customerId);
     }
 }
 
@@ -348,12 +387,10 @@ function saveOrder(orderData) {
     orders.unshift(orderData);
     localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
 
-    // Async sync to Supabase DB
     if (typeof saveOrderToSupabase === 'function') {
         saveOrderToSupabase(orderData);
     }
 
-    // Also update customer history in CUSTOMERS_DB
     let customers = getCustomersDB();
     const phone = orderData.customer.phone;
     let customer = customers.find(c => c.phone === phone);
@@ -379,6 +416,16 @@ function saveOrder(orderData) {
 
     window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'orders' } }));
     return orderData;
+}
+
+async function deleteOrderDB(orderId) {
+    let orders = getOrders().filter(o => o.orderId !== orderId);
+    localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+    window.dispatchEvent(new CustomEvent('dbUpdated', { detail: { type: 'orders' } }));
+
+    if (typeof deleteOrderFromSupabase === 'function') {
+        await deleteOrderFromSupabase(orderId);
+    }
 }
 
 function getOrderById(orderId) {

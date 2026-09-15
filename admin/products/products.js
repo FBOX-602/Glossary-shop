@@ -91,14 +91,15 @@ function duplicateProductItem(id) {
 
 async function deleteProductItem(id) {
     if (!confirm('Are you sure you want to delete this product?')) return;
-    let products = getProductsDB();
-    products = products.filter(p => p.id !== id);
-    saveProductsDB(products);
-
-    if (typeof deleteProductFromSupabase === 'function') {
-        await deleteProductFromSupabase(id);
+    if (typeof deleteProductDB === 'function') {
+        await deleteProductDB(id);
+    } else {
+        let products = getProductsDB();
+        products = products.filter(p => p.id !== id);
+        saveProductsDB(products);
     }
 }
+
 
 // --- Product Form Page Controller ---
 let currentVariants = [];

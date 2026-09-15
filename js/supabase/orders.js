@@ -156,3 +156,24 @@ async function updateOrderStatusInSupabase(orderId, newStatus) {
         return false;
     }
 }
+
+async function deleteOrderFromSupabase(orderId) {
+    const client = getSupabaseClient();
+    if (!client) return false;
+
+    try {
+        const { error } = await client
+            .from('orders')
+            .delete()
+            .eq('order_id', orderId);
+
+        if (error) {
+            console.error('Supabase deleteOrder error:', error.message);
+            return false;
+        }
+        return true;
+    } catch (err) {
+        console.error('Supabase deleteOrder failed:', err);
+        return false;
+    }
+}
